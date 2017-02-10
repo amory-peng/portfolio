@@ -1,0 +1,178 @@
+@import url('reset.css');
+
+body {
+  background: black;
+  color: white;
+}
+h1 {
+  font-size: 40px;
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+.head {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+
+.logo {
+  background: black;
+  display: flex;
+  flex-flow: row wrap;
+  color: white;
+  width: 60px;
+  height: 60px;
+  padding: 7px;
+}
+
+.logo > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  height: 50%;
+}
+.head ul {
+  display: flex;
+}
+
+.head ul > li {
+  padding: 10px;
+}
+
+#about {
+  height: 300px;
+  padding: 20px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#about .images{
+  width: 500px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+#about .images > * {
+  width: 50px;
+  height: auto;
+  margin: 20px;
+}
+
+#about i {
+  text-align: center;
+  font-size: 35px;
+}
+
+#things {
+  display: flex;
+  width: 100%;
+  max-height: 1000px;
+  flex-flow: row wrap;
+  overflow: auto;
+  padding: 20px;
+  padding-bottom: 100px;
+}
+
+.thing {
+  box-sizing: border-box;
+  position: relative;
+  border: 15px solid white;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thing img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  background: white;
+  /*border: 1px solid black;*/
+  z-index: 1;
+}
+
+.grid-1-2 {
+  width: 50%;
+}
+
+.overlay {
+  opacity: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: black;
+  z-index: 2;
+  transition: opacity 0.3s ease-in;
+}
+
+.desc {
+  position: absolute;
+  /*height: 0;*/
+  font-size: 25px;
+  overflow: hidden;
+  color: white;
+  z-index: 5;
+  /*transform: translate3d(0,24px,0) scaleY(0);*/
+  transform: scale(0, 1);
+  transition: transform 0.3s ease-in;
+}
+
+.thing:hover > .overlay {
+  opacity: 0.7;
+}
+
+.thing:hover > .desc {
+  /*height: 40px;*/
+  transform: scale(1, 1);
+}
+
+#contact {
+
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  background: black;
+}
+
+footer > * {
+  padding: 0 40px;
+}
+
+footer img {
+  width: 50px;
+  height: auto;
+}
+
+@media (max-width: 760px) {
+  #things .grid-1-2{
+    width: 100%;
+  }
+
+  #things {
+    max-height: none;
+  }
+
+  .thing {
+    border: 5px solid white;
+  }
+}
